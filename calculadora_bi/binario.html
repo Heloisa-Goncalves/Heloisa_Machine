@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleBox.css">
+</head>
+<body>
+    <div class="container">
+    <h1 class="tituloCalculadora">Heloísa's Machine</h1>
+    <input type="text" id="input_numero">
+    <button onclick="conversao()">Converter decimal</button>
+    <button onclick="reset()">Limpar</button>
+    
+        <div class="container_box">
+            <div class="box">
+                <h2>Octal</h2>
+                <div id="demo2" class="result">0</div>
+            </div>
+
+            <div class="box">
+                <h2>Hexadecimal</h2>
+                <div id="demo3" class="result">0</div>
+            </div>
+
+            <div class="box">
+                <h2>Binário</h2>
+                <div id="demo4" class="result">0</div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
+<script>
+    function conversao(){
+        let decimal =  Number(input_numero.value);
+            demo2.innerHTML = decimal.toString(8);
+            demo3.innerHTML = decimal.toString(16).toUpperCase();
+            demo4.innerHTML = decimal.toString(2);
+    }
+    function reset(){
+        input_numero.value = 0;
+        demo2.innerHTML = `0`;
+        demo3.innerHTML = `0`;
+        demo4.innerHTML = `0`;
+    }
+</script>
